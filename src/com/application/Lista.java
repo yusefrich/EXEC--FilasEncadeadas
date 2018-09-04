@@ -1,14 +1,14 @@
 package com.application;
-import java.util.Scanner;
 
 public class Lista {
-	  private Casa primeira;
+	  private Casa primeira;//primeiro elemento representado pela lista
 	  
-	  private Casa ultima;
+	  private Casa ultima;//ultimo elemento representado pela lista
 
-	  private int contador;
+	  private int contador;//contador, guarda o tamanho atual da lista
 	
 
+	  //Adiciona elemento a lista
 	  public void adiciona(Object elemento) {
 		  if (this.contador == 0) {
 			    this.adicionaNoComeco(elemento);
@@ -20,13 +20,16 @@ public class Lista {
 			    this.contador++;
 			  }
 	  }
+	  //faz referencia a casa a partir da posição indicada
 	  public Object pega(int posicao) {
-		  return this.pegaCelula(posicao).getElemento();
+		  return this.pegaCasa(posicao).getElemento();
 
 		  }
+	  //retorna o tamanho da lista
 	  public int tamanho() {
 	    return this.contador;
 	  }
+	  //busca na lista se ha algum valor igual ao Objeto passado
 	  public boolean contem(Object elemento) {
 		  
 		  Casa atual = this.primeira;
@@ -39,23 +42,24 @@ public class Lista {
 		  }
 		  return false;
 	  }
+	  //cria uma lista e adiciona o valor null a ela
 	  public void criarLista(int tamanho) {
 		  for(int i = 0; i < tamanho; i++) {
 			    this.adicionaNoComeco("null");
 		  }
 	  }
+	  //deleta todos os itens da lista
 	  public void delLista() {
 		  int totalDeElementos = contador ;
-		  totalDeElementos--;
 		  if(contador == 0) {
 			  System.out.println("A lista ja se encontra vazia");
 		  }else {
 			  for (int i = 0; i < totalDeElementos; i++) {
-				  this.removeDoFim();
+				  this.removeDoFim();// remove do fim todos os elemenos
 			  }
-			  this.removeDoComeco();
 		  }
 	  }
+	  //checa se a lista esta vazia
 	  public int listaVazia() {
 		  if(contador == 0) {
 			  return 1;
@@ -63,7 +67,7 @@ public class Lista {
 			  return 0;
 		  }
 	  }
-	  
+	  //adiciona elemento no começo da lista
 	  public void adicionaNoComeco(Object elemento) {
 		  if(this.contador == 0){
 			    Casa nova = new Casa(elemento);
@@ -76,7 +80,11 @@ public class Lista {
 			  }
 			  this.contador++;
 	  }
-	  
+	  //retorna o primeiro elemento da lista
+	  public Object primeiroElemento() {
+		  return primeira.getElemento();
+	  }
+	  //remove elemento do comeco da lista
 	  public void removeDoComeco() {
 		  if (!this.posicaoOcupada(0)) {
 			    throw new IllegalArgumentException("Posição não existe");
@@ -90,6 +98,7 @@ public class Lista {
 			  }
 
 	  }
+	  //remove elemento do fim da lista
 	  public void removeDoFim() {
 		  if (!this.posicaoOcupada(this.contador - 1)) {
 			    throw new IllegalArgumentException("Posição não existe");
@@ -104,7 +113,7 @@ public class Lista {
 			  }
 
 	  }
-
+	  //funcao de print
 	  public String toString() {
 
 		  // Verificando se a Lista está vazia
@@ -133,8 +142,8 @@ public class Lista {
 	  private boolean posicaoOcupada(int posicao){
 		  return posicao >= 0 && posicao < this.contador;
 		}
-
-		private Casa pegaCelula(int posicao) {
+	  	
+	  private Casa pegaCasa(int posicao) {
 		  if(!this.posicaoOcupada(posicao)){
 		    throw new IllegalArgumentException("Posição não existe");
 		  }
@@ -145,7 +154,4 @@ public class Lista {
 		  }
 		  return atual;
 		}
-
-
-		
 }

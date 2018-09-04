@@ -13,12 +13,20 @@ public class TesteBuscarNaLista {
 
 	    Lista lista = new Lista();
 	    
+	    //adiciona dados na lista
 	    lista.adiciona(alves);
 	    lista.adiciona(alvo);
 	    lista.adiciona(naMoxca);
+	    
+	    System.out.println(lista.contem(alves));//saida esperado true
+	    System.out.println(lista.contem(ricardo));//saida esperada false
+	    
+	    if(lista.contem(alves) && !lista.contem(ricardo)) {
+	    	System.out.println("questão 5 - função okay");
+	    }else {
+	    	System.out.println("questão 5 - erro");
 
-	    System.out.println(lista.contem(alves));
-	    System.out.println(lista.contem(ricardo));
+	    }
 
 	}
 

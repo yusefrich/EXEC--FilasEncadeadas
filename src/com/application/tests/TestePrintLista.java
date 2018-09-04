@@ -15,7 +15,7 @@ public class TestePrintLista {
 	    lista.adiciona(richard);
 	    lista.adiciona(ricardo);
 	    lista.adiciona(richar);
-	    
+	    //printa objetos na tela, questao 3
 	    System.out.println(lista);
 
 	}

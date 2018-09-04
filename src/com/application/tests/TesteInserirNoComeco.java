@@ -10,13 +10,44 @@ public class TesteInserirNoComeco {
 			Objeto josefi = new Objeto("Josefi");
 			Objeto josefino = new Objeto("Josefino");
 				
-		    Lista lista = new Lista();
+		    Lista lista = new Lista(); 
 		    
+		    //variavel para efetivar teste
+		    boolean primeiroElementoTestado = true;
+		   
+		    //insere elemento na lista
 		    lista.adicionaNoComeco(yusef);
-		    lista.adicionaNoComeco(josefi);
-		    lista.adicionaNoComeco(josefino);
-
 		    System.out.println(lista);
+		    
+		    //checa se o primeiro elemento da lista é o adicionado
+		    if (lista.primeiroElemento() != yusef) {
+		    	primeiroElementoTestado = false;
+		    }
+		    
+		    lista.adicionaNoComeco(josefi);
+		    System.out.println(lista);
+		    
+		    //checa se o primeiro elemento da lista é o adicionado
+		    if (lista.primeiroElemento() != josefi) {
+		    	primeiroElementoTestado = false;
+		    }
+
+
+		    lista.adicionaNoComeco(josefino);
+		    System.out.println(lista);
+		    
+		    //checa se o primeiro elemento da lista é o adicionado
+		    if (lista.primeiroElemento() != josefino) {
+		    	primeiroElementoTestado = false;
+		    }
+		    
+		    //check final
+		    if(primeiroElementoTestado) { 
+		    	System.out.println("questão 2 - função okay");
+		    }else {
+		    	System.out.println("questão 2 - erro");
+		    }
+
 	}
 
 }

@@ -12,15 +12,23 @@ public class TesteDeleteAll {
 
 	    Lista lista = new Lista();
 	    
+	    //adiciona dados na array
 	    lista.adiciona(recreio);
 	    lista.adiciona(intervalo);
 	    lista.adiciona(pausa);
 	    
+	    //print lista com dados
 	    System.out.println(lista);
 
+	    //deleta lista por completo
 	    lista.delLista();
 	    
-	    System.out.println(lista);
+	    System.out.println(lista);//resultado esperado é null / []
+	    if(lista.toString() == "[]") {
+	    	System.out.println("questão 7 - função okay");
+	    }else {
+	    	System.out.println("questão 7 - erro");
+	    }
 
 	}
 

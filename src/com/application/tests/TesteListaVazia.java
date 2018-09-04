@@ -15,9 +15,14 @@ public class TesteListaVazia {
 	    lista.adicionaNoComeco(oliveira);
 	    lista.adicionaNoComeco(oliver);
 	    
-	    System.out.println("A lista 1 esta = " + lista.listaVazia());
-	    System.out.println("A lista 2 esta = " + lista2.listaVazia());
+	    System.out.println("A lista 1 esta = " + lista.listaVazia());//saida esperada 0
+	    System.out.println("A lista 2 esta = " + lista2.listaVazia());//saida esperada 1
+	    
+	    if(lista.listaVazia() == 0 && lista2.listaVazia() == 1) {
+	    	System.out.println("questão 4 - função okay");
 
+	    }else {
+	    	System.out.println("questão 4 - erro");
+	    }
 	}
-
 }
